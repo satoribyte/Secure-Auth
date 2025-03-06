@@ -1,0 +1,8 @@
+{
+    "123user": {
+        "username": "123user",
+        "password_hash": "scrypt:32768:8:1$hjjYQCLyjvGXFB78$e56edba693944ea94ea6f0762725c636dfeb44c2ddedc854d84248b6201441c5667ea4f2a40f16dec4aa295b45bb3f1a15d38630f5ecfc7317c0e50fd1bb1951",
+        "two_factor_secret": "UZ45EERSGQQUL5D6QA7ECABXFQ43KUMQ",
+        "is_2fa_verified": false
+    }
+}

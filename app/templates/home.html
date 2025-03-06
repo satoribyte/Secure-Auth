@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-12">
+    <div class="text-center">
+        <h1 class="text-4xl font-extrabold text-gray-900">Welcome to Secure Auth</h1>
+        <p class="mt-4 text-lg text-gray-600">
+            Your secure authentication system built with Flask and Tailwind CSS.
+        </p>
+    </div>
+    
+    <div class="mt-8 flex justify-center space-x-4">
+        <a href="{{ url_for('auth.login') }}" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+            Login
+        </a>
+        <a href="{{ url_for('auth.register') }}" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition duration-300">
+            Register
+        </a>
+    </div>
+</div>
+{% endblock %}

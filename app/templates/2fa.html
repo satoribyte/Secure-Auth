@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-md mx-auto bg-white shadow-md rounded-lg p-6 text-center">
+    <h2 class="text-2xl font-semibold text-gray-800">Setup Two-Factor Authentication</h2>
+    <p class="text-gray-600 mt-2">Scan the QR code below with your authentication app or enter the secret key manually.</p>
+    
+    <!-- QR Code -->
+    <div class="mt-4">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data={{ secret }}" alt="QR Code" class="mx-auto rounded-lg shadow-md">
+    </div>
+    
+    <!-- Secret Key -->
+    <div class="mt-4">
+        <label for="secret" class="block text-gray-700 font-medium">Secret Key:</label>
+        <textarea id="secret" class="w-full p-2 border rounded-lg bg-gray-100 text-gray-800" readonly>{{ secret }}</textarea>
+    </div>
+    
+    <!-- Finish Setup Button -->
+    <form action="{{ url_for('auth.verify_otp', username=username) }}" method="GET" class="mt-6">
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+            Finish Setup
+        </button>
+    </form>
+</div>
+{% endblock %}

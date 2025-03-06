@@ -1,0 +1,36 @@
+/Secure Auth
+│
+├── app/
+│ ├── __init__.py
+│ ├── routes/
+│ │ ├── __init__.py
+│ │ ├── auth.py
+│ │ └── dashboard.py
+│ ├── models/
+│ │ ├── __init__.py
+│ │ └── user.py
+│ ├── forms/
+│ │ ├── __init__.py
+│ │ └── forms.py
+│ ├── utils/
+│ │ ├── __init__.py
+│ │ ├── security.py
+│ │ └── limiter.py
+│ ├── templates/
+│ │ ├── base.html
+│ │ ├── home.html
+│ │ ├── register.html
+│ │ ├── login.html
+│ │ ├── dashboard.html
+│ │ ├── error.html
+│ │ ├── verify.html
+│ │ └── 2fa.html
+│
+├── config.py
+├── app.py
+├── logs/
+│ ├── app.log
+│ ├── error.log
+│ └── access.log
+├── requirements.txt
+└── README.md

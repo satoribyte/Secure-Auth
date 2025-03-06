@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-md mx-auto bg-white shadow-md rounded-lg p-6">
+    <h2 class="text-2xl font-semibold text-gray-800 text-center">Register</h2>
+    
+    <form method="POST" class="mt-4">
+        {{ form.hidden_tag() }}
+        
+        <div class="mb-4">
+            <label for="username" class="block text-gray-700 font-medium">Username</label>
+            {{ form.username(class="w-full mt-1 p-2 border rounded-lg focus:ring focus:ring-blue-300") }}
+        </div>
+        
+        <div class="mb-4">
+            <label for="password" class="block text-gray-700 font-medium">Password</label>
+            {{ form.password(class="w-full mt-1 p-2 border rounded-lg focus:ring focus:ring-blue-300") }}
+        </div>
+        
+        <div class="mb-4">
+            <label for="confirm_password" class="block text-gray-700 font-medium">Confirm Password</label>
+            {{ form.confirm_password(class="w-full mt-1 p-2 border rounded-lg focus:ring focus:ring-blue-300") }}
+        </div>
+        
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+            Register
+        </button>
+    </form>
+    
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="mt-4 space-y-2">
+        {% for category, message in messages %}
+        <div class="p-3 rounded-md 
+                        {% if category == 'success' %} bg-green-100 text-green-700 {% elif category == 'error' %} bg-red-100 text-red-700 {% else %} bg-gray-100 text-gray-700 {% endif %}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+</div>
+{% endblock %}
